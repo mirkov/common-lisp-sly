@@ -63,6 +63,7 @@
       (sp-local-pair '(sly-mrepl-mode) "`" "`" :actions nil))))
 
 (defun common-lisp-sly/init-sly ()
+  (message "Entered common-lisp-sly/init-sly")
   (use-package sly
     :defer t
     :init
@@ -73,7 +74,7 @@
           sly-repl-history-remove-duplicates t
           sly-repl-history-trim-whitespaces t
           sly-net-coding-system 'utf-8-unix)
-    (sly-setup '(sly-fancy))
+    ;; (sly-setup '(sly-fancy))
     (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
       "'" 'sly
       "ha" 'sly-apropos
@@ -127,6 +128,9 @@
             ("ms" . "repl")
             ("mS" . "stickers")
             ("mt" . "trace")))))
+
+(defun common-lisp-sly/post-init-sly ()
+  (sly-setup '(sly-fancy)))
 
 (defun common-lisp-sly/init-sly-mrepl ()
   (use-package sly-mrepl
