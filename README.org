@@ -9,20 +9,56 @@
 #+END_SRC
 
 * Table of Contents
-- [[#description][Description]]
-  - [[#features][Features]]
-- [[#layer-installation][Layer Installation]]
-- [[#structurally-safe-editing][Structurally safe editing]]
-- [[#key-bindings][Key Bindings]]
-  - [[#help][Help]]
-  - [[#compilation][Compilation]]
-  - [[#evaluation][Evaluation]]
-  - [[#navigation][Navigation]]
-  - [[#macro-expansion][Macro-expansion]]
-  - [[#repl][REPL]]
-  - [[#stickers][Stickers]]
-  - [[#tracing][Tracing]]
+- [[Warning]]
+- [[Unresolved Issues]]
+- [[Description]]
+  - [[Features]]
+- [[Layer Installation][Layer Installation]]
+- [[Structurally Safe Editing]]
+- [[Key Bindings]]
+  - [[Help]]
+  - [[Compilation]]
+  - [[Evaluation]]
+  - [[Navigation]]
+  - [[Macro-expansion]]
+  - [[REPL]]
+  - [[Stickers]]
+  - [[Tracing]]
 
+* Warning
+
+  This package is forked from [[https://github.com/mfiano][mfiano's]] Common Lisp Sly Layer, that is archived on
+  [[https://github.com/mfiano/common-lisp-sly][GitHub]] (i.e., it is not maintained anymore by the original author).
+
+  I am trying to revive it for my own use. I have placed it on GitHub to serve
+  as documentation for discussion and for help. It may dissapear at any time.
+
+  I am new to Spacemacs and Sly, so I may be doing things wrongly here I am new
+  to Spacemacs and Sly, so I may be doing things wrongly here.
+
+  Do not ask me on how to /help you/, as it is me that needs help. If you feel
+  that you can improve it, please clone it tfro the original source, implement
+  your improvements, and advertise so that the rest of us can benefit from your
+  work. 
+
+* Unresolved Issues
+  My list of issues that I was not able to make work
+ 
+** Change inspector, db, xref, stickers mode from emacs to ??? 
+   Currently, these modes are in emacs mode. How to specify a vim type mode
+** Assign =isearch-backward= to a key in repl
+
+   I can access =isearch-backward= functionality only by invoking the command
+   explicitly, using =M-x ...= or =S S ...=.
+
+   I tried assigning it to "C-r" in =common-lisp-sly/init-sly-mrepl ()...=, but
+   that did not work.
+** Error highlighing and navigation
+   - When a function is compiled and issued an error, there is no visible
+     overlay on the buffer
+** REPL key bindings
+   The key bindings listed in the [[REPL]] session to be bound to the ~SPC m~ key
+   combination do not work. Instead, they are accessible with the ~,~ key.
 * Description
 This layer provides support for Common Lisp to Spacemacs using Sly. This layer should be used
 instead of the =common-lisp= layer if you want to use Sly -- a more featureful Common Lisp
@@ -90,81 +126,87 @@ general, use ~SPC k~ to interact with =lisp-state=.
 
 | Key Binding | Description                                               |
 |-------------+-----------------------------------------------------------|
-| ~SPC m h a~   | Apropos - search for any symbol matching input (prompted) |
-| ~SPC m h b~   | Show who binds the global variable at point               |
-| ~SPC m h d~   | Show disassembly of symbol at point                       |
-| ~SPC m h h~   | Describe symbol at point                                  |
-| ~SPC m h H~   | Lookup symbol at point in the Common Lisp HyperSpec       |
-| ~SPC m h m~   | Show the usages of macro at point                         |
-| ~SPC m h p~   | Browse package's exported symbols                         |
-| ~SPC m h r~   | Show who refers to the global variable at point           |
-| ~SPC m h s~   | Show all methods specialized on class symbol at point     |
-| ~SPC m h S~   | Show who sets the global variable at point                |
-| ~SPC m h <~   | Show who calls the function symbol at point               |
-| ~SPC m h >~   | Show all functions called by function symbol at point     |
+| ~SPC m h a~ | Apropos - search for any symbol matching input (prompted) |
+| ~SPC m h b~ | Show who binds the global variable at point               |
+| ~SPC m h d~ | Show disassembly of symbol at point                       |
+| ~SPC m h h~ | Describe symbol at point                                  |
+| ~SPC m h H~ | Lookup symbol at point in the Common Lisp HyperSpec       |
+| ~SPC m h m~ | Show the usages of macro at point                         |
+| ~SPC m h p~ | Browse package's exported symbols                         |
+| ~SPC m h r~ | Show who refers to the global variable at point           |
+| ~SPC m h s~ | Show all methods specialized on class symbol at point     |
+| ~SPC m h S~ | Show who sets the global variable at point                |
+| ~SPC m h <~ | Show who calls the function symbol at point               |
+| ~SPC m h >~ | Show all functions called by function symbol at point     |
 
 ** Compilation
 
 | Key Binding | Description              |
 |-------------+--------------------------|
-| ~SPC m c c~   | Compile file             |
-| ~SPC m c C~   | Compile and load file    |
-| ~SPC m c f~   | Compile function         |
-| ~SPC m c l~   | Load file                |
-| ~SPC m c n~   | Remove compilation notes |
-| ~SPC m c r~   | Compile region           |
+| ~SPC m c c~ | Compile file             |
+| ~SPC m c C~ | Compile and load file    |
+| ~SPC m c f~ | Compile function         |
+| ~SPC m c l~ | Load file                |
+| ~SPC m c n~ | Remove compilation notes |
+| ~SPC m c r~ | Compile region           |
 
 ** Evaluation
 
 | Key Binding | Description                                              |
 |-------------+----------------------------------------------------------|
-| ~SPC m e b~   | Evaluate buffer                                          |
-| ~SPC m e e~   | Evaluate last s-expression                               |
-| ~SPC m e E~   | Evaluate last s-expression and print result as a comment |
-| ~SPC m e f~   | Evaluate top-level function s-expression                 |
-| ~SPC m e F~   | Undefine the function at point                           |
-| ~SPC m e r~   | Evaluate region                                          |
+| ~SPC m e b~ | Evaluate buffer                                          |
+| ~SPC m e e~ | Evaluate last s-expression                               |
+| ~SPC m e E~ | Evaluate last s-expression and print result as a comment |
+| ~SPC m e f~ | Evaluate top-level function s-expression                 |
+| ~SPC m e F~ | Undefine the function at point                           |
+| ~SPC m e r~ | Evaluate region                                          |
 
 ** Navigation
 
 | Key Binding | Description                          |
 |-------------+--------------------------------------|
-| ~SPC m g~     | Enter the navigation transient state |
+| ~SPC m g~   | Enter the navigation transient state |
 
 ** Macro-expansion
 
 | Key Binding | Description                               |
 |-------------+-------------------------------------------|
-| ~SPC m m e~   | Macro-expand the form at point once       |
-| ~SPC m m E~   | Macro-expand the form at point completely |
-| ~SPC m m s~   | Enter the macrostep transient state       |
+| ~SPC m m e~ | Macro-expand the form at point once       |
+| ~SPC m m E~ | Macro-expand the form at point completely |
+| ~SPC m m s~ | Enter the macrostep transient state       |
 
 ** REPL
-
+Note: the following bindings are accessible via the , prefix and not ~SPC m~
 | Key Binding | Description                                                        |
 |-------------+--------------------------------------------------------------------|
-| ~SPC m s c~   | Clear the REPL                                                     |
-| ~SPC m s i~   | Start a new Common Lisp image                                      |
-| ~SPC m s I~   | Choose a new Common Lisp implementation and start a new image      |
-| ~SPC m s q~   | Quit the REPL, terminating the Common Lisp image                   |
-| ~SPC m s r~   | Restart the Common Lisp image associated with the current REPL     |
-| ~SPC m s s~   | Sync the REPL with the current file buffer's package and directory |
+| ~SPC m s c~ | Clear the REPL                                                     |
+| ~SPC m s i~ | Start a new Common Lisp image                                      |
+| ~SPC m s I~ | Choose a new Common Lisp implementation and start a new image      |
+| ~SPC m s q~ | Quit the REPL, terminating the Common Lisp image                   |
+| ~SPC m s r~ | Restart the Common Lisp image associated with the current REPL     |
+| ~SPC m s s~ | Sync the REPL with the current file buffer's package and directory |
 
+*** REPL keybindings in the INSERT mode
+| Key Binding | Description                                     |
+|-------------+-------------------------------------------------|
+| ~Ctrl-up~   | Recall previous command                         |
+| ~Ctrl-down~ | Recall next command                             |
+| ~Ctrl-r~    | Search for a previous command (not implemented) |
 ** Stickers
 
 | Key Binding | Description                                                                                 |
 |-------------+---------------------------------------------------------------------------------------------|
-| ~SPC m S b~   | Toggle breaking stickers, to have debugger come up when sticker is reached during execution |
-| ~SPC m S c~   | Clear all stickers for function at point                                                    |
-| ~SPC m S C~   | Clear all stickers for buffer                                                               |
-| ~SPC m S f~   | Fetch recordings for sticker at point                                                       |
-| ~SPC m S r~   | Cycle through the recordings of all stickers                                                |
-| ~SPC m S s~   | Add or remove (if one already exists) sticker at point                                      |
+| ~SPC m S b~ | Toggle breaking stickers, to have debugger come up when sticker is reached during execution |
+| ~SPC m S c~ | Clear all stickers for function at point                                                    |
+| ~SPC m S C~ | Clear all stickers for buffer                                                               |
+| ~SPC m S f~ | Fetch recordings for sticker at point                                                       |
+| ~SPC m S r~ | Cycle through the recordings of all stickers                                                |
+| ~SPC m S s~ | Add or remove (if one already exists) sticker at point                                      |
 
 ** Tracing
 
 | Key Binding | Description        |
 |-------------+--------------------|
-| ~SPC m t t~   | Toggle trace       |
-| ~SPC m t T~   | Toggle fancy trace |
-| ~SPC m t u~   | Untrace all        |
+| ~SPC m t t~ | Toggle trace       |
+| ~SPC m t T~ | Toggle fancy trace |
+| ~SPC m t u~ | Untrace all        |
