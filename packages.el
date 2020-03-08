@@ -138,9 +138,7 @@
     :bind
     (:map sly-mrepl-mode-map
           ("<C-up>" . sly-mrepl-previous-input-or-button)
-          ("<C-down>" . sly-mrepl-next-input-or-button)
-          ("<C-r>" . isearch-backward) 
-          )))
+          ("<C-down>" . sly-mrepl-next-input-or-button))))
 
 (defun common-lisp-sly/post-init-company ()
   (spacemacs|add-company-backends
