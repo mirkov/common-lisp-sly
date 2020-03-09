@@ -1,28 +1,22 @@
 
 # Table of Contents
 
-1.  [Table of Contents](#org8b4ff96)
-2.  [Warning](#orgf8097d5)
-3.  [Unresolved Issues](#org9e93e66)
-    1.  [Change inspector, db, xref, stickers mode from emacs to ???](#org0c47129)
-    2.  [Assign `isearch-backward` to a key in repl](#org3dedb8f)
-    3.  [Error highlighing and navigation](#orgcc38cfb)
-    4.  [REPL key bindings](#org707e1e4)
-4.  [Description](#org300d5e1)
-    1.  [Features](#org58f1c18)
-5.  [Layer Installation](#org699c832)
-6.  [Structurally Safe Editing](#org3956aef)
-7.  [Key Bindings](#orgc2e2a5e)
-    1.  [Working with Lisp files (slurpage, barfage, and more)](#orga4dab4f)
-    2.  [Help](#org674cfae)
-    3.  [Compilation](#org0fda0e3)
-    4.  [Evaluation](#orge87c730)
-    5.  [Navigation](#org02d5a43)
-    6.  [Macro-expansion](#org0d56514)
-    7.  [REPL](#orge2ee1ea)
-        1.  [REPL keybindings in the INSERT mode](#orgbb710ac)
-    8.  [Stickers](#orgde4ea58)
-    9.  [Tracing](#org39849c0)
+1.  [Warning](#org4eadf75)
+2.  [Description](#org02399c4)
+    1.  [Features](#orgbf2f575)
+3.  [Layer Installation](#orge06e84a)
+4.  [Structurally Safe Editing](#org1c0fd7e)
+5.  [Key Bindings](#org38d5a22)
+    1.  [Working with Lisp files (slurpage, barfage, and more)](#org2d8a3c1)
+    2.  [Help](#orgd3566e6)
+    3.  [Compilation](#orgcead1c3)
+    4.  [Evaluation](#orgbac53a5)
+    5.  [Navigation](#org4e529d0)
+    6.  [Macro-expansion](#org5cb20d1)
+    7.  [REPL](#org9de0be2)
+        1.  [REPL keybindings in the INSERT mode](#org120b3ad)
+    8.  [Stickers](#org1c2e531)
+    9.  [Tracing](#org0a2d254)
 
        _____    __   __  __
       / ___/   / /   \ \/ /               |\      _,,,---,,_
@@ -31,28 +25,7 @@
     /____/  /_____/  /_/                '---''(_/--'  `-'\_)
 
 
-<a id="org8b4ff96"></a>
-
-# Table of Contents
-
--   [2](#orgf8097d5)
--   [3](#org9e93e66)
--   [4](#org300d5e1)
-    -   [4.1](#org58f1c18)
--   [Layer Installation](#org699c832)
--   [6](#org3956aef)
--   [7](#orgc2e2a5e)
-    -   [7.2](#org674cfae)
-    -   [7.3](#org0fda0e3)
-    -   [7.4](#orge87c730)
-    -   [7.5](#org02d5a43)
-    -   [7.6](#org0d56514)
-    -   [7.7](#orge2ee1ea)
-    -   [7.8](#orgde4ea58)
-    -   [7.9](#org39849c0)
-
-
-<a id="orgf8097d5"></a>
+<a id="org4eadf75"></a>
 
 # Warning
 
@@ -71,48 +44,7 @@ your improvements, and advertise so that the rest of us can benefit from your
 work. 
 
 
-<a id="org9e93e66"></a>
-
-# Unresolved Issues
-
-My list of issues that I was not able to make work
-
-
-<a id="org0c47129"></a>
-
-## Change inspector, db, xref, stickers mode from emacs to ???
-
-Currently, these modes are in emacs mode. How to specify a vim type mode
-
-
-<a id="org3dedb8f"></a>
-
-## Assign `isearch-backward` to a key in repl
-
-I can access `isearch-backward` functionality only by invoking the command
-explicitly, using `M-x ...` or `S S ...`.
-
-I tried assigning it to "C-r" in `common-lisp-sly/init-sly-mrepl ()...`, but
-that did not work.
-
-
-<a id="orgcc38cfb"></a>
-
-## Error highlighing and navigation
-
--   When a function is compiled and issued an error, there is no visible
-    overlay on the buffer
-
-
-<a id="org707e1e4"></a>
-
-## REPL key bindings
-
-The key bindings listed in the [7.7](#orge2ee1ea) session to be bound to the `SPC m` key
-combination do not work. Instead, they are accessible with the `,` key.
-
-
-<a id="org300d5e1"></a>
+<a id="org02399c4"></a>
 
 # Description
 
@@ -121,7 +53,7 @@ instead of the `common-lisp` layer if you want to use Sly &#x2013; a more featur
 environment.
 
 
-<a id="org58f1c18"></a>
+<a id="orgbf2f575"></a>
 
 ## Features
 
@@ -137,7 +69,7 @@ environment.
     annotation.
 
 
-<a id="org699c832"></a>
+<a id="orge06e84a"></a>
 
 # Layer Installation
 
@@ -155,7 +87,7 @@ can specify it in your `~/.spacemacs`:
       (setq inferior-lisp-program "/path/to/your/lisp"))
 
 
-<a id="org3956aef"></a>
+<a id="org1c0fd7e"></a>
 
 # Structurally Safe Editing
 
@@ -177,12 +109,12 @@ or to enable it for all supported modes:
 When enabled, the symbol `🆂` should be displayed in the mode line.
 
 
-<a id="orgc2e2a5e"></a>
+<a id="org38d5a22"></a>
 
 # Key Bindings
 
 
-<a id="orga4dab4f"></a>
+<a id="org2d8a3c1"></a>
 
 ## Working with Lisp files (slurpage, barfage, and more)
 
@@ -193,7 +125,7 @@ As this state works the same for all files, the documentation is in global [DOCU
 general, use `SPC k` to interact with `lisp-state`.
 
 
-<a id="org674cfae"></a>
+<a id="orgd3566e6"></a>
 
 ## Help
 
@@ -287,7 +219,7 @@ general, use `SPC k` to interact with `lisp-state`.
 </table>
 
 
-<a id="org0fda0e3"></a>
+<a id="orgcead1c3"></a>
 
 ## Compilation
 
@@ -345,7 +277,7 @@ general, use `SPC k` to interact with `lisp-state`.
 </table>
 
 
-<a id="orge87c730"></a>
+<a id="orgbac53a5"></a>
 
 ## Evaluation
 
@@ -403,7 +335,7 @@ general, use `SPC k` to interact with `lisp-state`.
 </table>
 
 
-<a id="org02d5a43"></a>
+<a id="org4e529d0"></a>
 
 ## Navigation
 
@@ -431,7 +363,7 @@ general, use `SPC k` to interact with `lisp-state`.
 </table>
 
 
-<a id="org0d56514"></a>
+<a id="org5cb20d1"></a>
 
 ## Macro-expansion
 
@@ -471,7 +403,7 @@ general, use `SPC k` to interact with `lisp-state`.
 </table>
 
 
-<a id="orge2ee1ea"></a>
+<a id="org9de0be2"></a>
 
 ## REPL
 
@@ -531,7 +463,7 @@ Note: the following bindings are accessible via the , prefix and not `SPC m`
 </table>
 
 
-<a id="orgbb710ac"></a>
+<a id="org120b3ad"></a>
 
 ### REPL keybindings in the INSERT mode
 
@@ -571,7 +503,7 @@ Note: the following bindings are accessible via the , prefix and not `SPC m`
 </table>
 
 
-<a id="orgde4ea58"></a>
+<a id="org1c2e531"></a>
 
 ## Stickers
 
@@ -629,7 +561,7 @@ Note: the following bindings are accessible via the , prefix and not `SPC m`
 </table>
 
 
-<a id="org39849c0"></a>
+<a id="org0a2d254"></a>
 
 ## Tracing
 

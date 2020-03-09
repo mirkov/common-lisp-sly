@@ -1,14 +1,13 @@
 #+TITLE: Common Lisp Sly layer
-
-#+BEGIN_SRC text
+#+BEGIN_EXAMPLE
           _____    __   __  __
          / ___/   / /   \ \/ /               |\      _,,,---,,_
          \__ \   / /     \  /                /,`.-'`'    -.  ;-;;,_
         ___/ /  / /___   / /                |,4-  ) )-,_..;\ (  `'-'
        /____/  /_____/  /_/                '---''(_/--'  `-'\_)
-#+END_SRC
+#+END_EXAMPLE
 
-* Table of Contents
+* Table of Contents                                                :noexport:
 - [[Warning]]
 - [[Unresolved Issues]]
 - [[Description]]
@@ -41,9 +40,10 @@
   your improvements, and advertise so that the rest of us can benefit from your
   work. 
 
-* Unresolved Issues
+* Unresolved Issues                                                :noexport:
   My list of issues that I was not able to make work
- 
+
+  This list should match the ones on github issues
 ** Change inspector, db, xref, stickers mode from emacs to ??? 
    Currently, these modes are in emacs mode. How to specify a vim type mode
 ** Assign =isearch-backward= to a key in repl
